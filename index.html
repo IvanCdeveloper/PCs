@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Ordenadores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Ordenadores</h1>
+
+        <!-- Login y Registro -->
+        <div id="auth">
+            <form id="loginForm" action="login.php" method="POST">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="registerForm" action="register.php" method="POST">
+                <h2>Registrarse</h2>
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <a href="logout.php">Cerrar sesión</a>
+
+
+        <!-- CRUD Formulario -->
+        <div id="crud" style="display: none;">
+            <form id="computerForm" action="crud.php" method="POST">
+                <h2>Nuevo Ordenador</h2>
+                <input type="text" name="cpu" placeholder="CPU" required>
+                <input type="text" name="ram" placeholder="RAM" required>
+                <input type="text" name="gpu" placeholder="GPU" required>
+                <input type="text" name="storage" placeholder="Almacenamiento" required>
+                <button type="submit" name="create">Crear</button>
+            </form>
+
+            <div id="computerList">
+                <h2>Lista de Ordenadores</h2>
+                <!-- Aquí se cargan los datos dinámicamente -->
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
